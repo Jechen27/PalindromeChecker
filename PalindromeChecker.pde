@@ -16,14 +16,18 @@ public void setup()
 }
 public boolean palindrome(String word)
 {
-  //your code here
-  return false;
+  word = word.toLowerCase();
+  String temp = new String();
+  for (int i=0;i<word.length();i++)
+  if (word.charAt(i)!=' ' && Character.isLetter(word.charAt(i)))
+  temp += word.substring(i,i+1);
+  word = temp;
+  return (word.equals(reverse(word)));
 }
 public String reverse(String str)
 {
     String sNew = new String();
-    //your code here
+    for (int i = str.length(); i>0; i--)
+    sNew += str.substring(i-1,i);
     return sNew;
 }
-
-
